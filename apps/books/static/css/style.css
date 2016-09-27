@@ -1,0 +1,12 @@
+#logo {
+	margin-top: 0px;
+	margin-left: 20px;
+}
+
+div.star {
+	width: 10px;
+	height: 10px;
+	background-color: yellow;
+	display: inline-block;
+	vertical-align: top;
+}

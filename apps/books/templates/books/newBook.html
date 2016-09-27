@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Ben-Ammi">
+	<title></title>
+	{% load staticfiles %}
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/materialize_icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<script src="{% static 'js/jquery-2.2.3.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script src="{% static 'js/materialize.js' %}"></script>
+</head>
+<body>
+	<nav>
+		<ul class="right">
+			<li><a href="{% url 'log_logout' %}">Log Out</a></li>
+			<li><a href="{% url 'book_new' %}">Add a Book</a></li>
+			<li><a href="{% url 'book_index' %}">Home</a></li>
+		</ul>
+	</nav>
+	<div class="container section">
+		<div class="row">
+
+			<form action="{% url 'book_add' %}" method="post">
+				{% csrf_token %}
+				{{bookForm}}
+				<input type="submit" value="Add Book" />
+			</form>
+<!-- 			<form class="col s3" action="{% url 'book_add' %}" method="post">
+				{% csrf_token %}
+				<label>Book Title</label>
+				<input type="text" name="title" placeholder="Title" />
+				<label>Current Author</label>
+				<select name="curAuthor">
+					<option value="n/a">Select Author</option>
+					{% for author in authors %}
+					<option value="{{author.id}}">{{author.name}}</option>
+					{% endfor %}
+				</select>
+				<label>New Author</label>
+				<input type="text" name="newAuthor" placeholder="newAuthor" />
+				<label>Review</label>
+				<input type="text" name="review" placeholder="Review" />
+				<select name="rating">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				<input type="submit" value="Add Book" />
+			</form> -->
+		</div>
+	</div>
+</body>
+</html>

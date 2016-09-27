@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Ben-Ammi">
+	<title></title>
+	{% load staticfiles %}
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/materialize_icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<script src="{% static 'js/jquery-2.2.3.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script src="{% static 'js/materialize.js' %}"></script>
+</head>
+<body>
+	<nav>
+		<ul class="right">
+			<li><a href="{% url 'log_logout' %}">Log Out</a></li>
+			<li><a href="{% url 'book_new' %}">Add a Book</a></li>
+			<li><a href="{% url 'book_index' %}">Home</a></li>
+		</ul>
+	</nav>
+	<h4>{{book.title}}</h4>
+</body>
+</html>
